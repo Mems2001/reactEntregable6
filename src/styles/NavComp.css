@@ -1,0 +1,35 @@
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.headerCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 15vh;
+    align-items: center;
+    background-color: var(--bcolor-10);
+}
+
+.headerTitle {
+    margin: 3vw;
+    color: var(--bcolor-1);
+}
+
+.headerList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50vw;
+    height: 100%;
+}
+
+.navLinkClass {
+    color: var(--bcolor-6);
+    font-weight: 700;
+}
