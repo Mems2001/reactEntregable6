@@ -1,0 +1,19 @@
+.dataContainer {
+    display: grid;
+    grid-template-columns: repeat(2 , auto);
+    grid-template-rows:  repeat(2 ,auto);
+    gap: 10vh
+}
+
+.mainRelatedCont {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.relatedContainer {
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vh;
+}
