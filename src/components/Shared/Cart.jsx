@@ -45,13 +45,15 @@ const Cart = ({ loadCart }) => {
     }
   }
 
-  console.log (cartProd)
+  // console.log (cartProd)
 
   return (
     <section className='cartCard'>
-      { cartProd?.map(
-        prod => <CartInfo prod={prod} loadCart={loadCart} />
-      ) }
+      <div className='cartProdCont'>
+        { cartProd?.map(
+          prod => <CartInfo prod={prod} loadCart={loadCart} cartProd={cartProd} />
+        ) }
+      </div>
       <button onClick={checkOut} >CheckOut</button>
     </section>
   )

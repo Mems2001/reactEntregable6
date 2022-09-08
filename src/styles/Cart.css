@@ -1,0 +1,51 @@
+h3 {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cartCard{
+   display: flex;
+   flex-direction: column;
+   gap: 5vh;
+   min-height: 85vh ;
+   max-width: 85vw;
+   justify-content: center;
+}
+
+.cartProdCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vh;
+}
+
+/* CARDINFO  */
+
+.cartCards {
+    height: 35vh;
+    width: 25vw;
+    border: 1px var(--bcolor-6) solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+.cartImgs {
+    max-height: 10vh;
+    max-width: 10vw;
+    object-fit: contain;
+    align-self: center;
+}
+
+.prodHeaderCart {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.quantity {
+    text-align: center;
+}
