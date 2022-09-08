@@ -10,12 +10,13 @@ const Home = ({ prodId , setProdId , loadCart }) => {
   useEffect (
     () => {
       dispatch(getAllProducts())
+      setProdId()
     }, []
   )
 
   const allProd = useSelector(state => state.productsSlice)
 
-  console.log (prodId)
+  // console.log (prodId)
 
   return (
    <div className='prodContainer'>

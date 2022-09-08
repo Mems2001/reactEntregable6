@@ -13,13 +13,11 @@ const Cart = ({ loadCart }) => {
 
   useEffect (
     () => { 
+      if (cartProd) {
 
-      getConfig()
+        loadCart ()
 
-      // console.log (localStorage.getItem('token'))
-
-     loadCart ()
-
+      }
     } , []
   )
 

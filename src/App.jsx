@@ -13,7 +13,7 @@ import axios from 'axios'
 import Cart from './components/Shared/Cart'
 import ProtectedRoutes from './components/Routes/ProtectedRoutes.jsx'
 import getConfig from './utilities/GetConfig'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setCart } from './store/slices/cart.slice'
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
   const dispatch = useDispatch()
 
   const loadCart = () => {
+
     const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
 
     axios.get(URL , getConfig())
@@ -30,6 +31,7 @@ function App() {
       dispatch( setCart (res.data.data.cart.products)) 
     })
     .catch (err => console.log (err))
+    
   }
 
   // useEffect (
