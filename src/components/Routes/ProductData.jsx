@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import ProdImages from '../ProductData/ProdImages'
 import ProductDescription from '../ProductData/ProductDescription'
 
-const ProductData = ( ) => {
+const ProductData = ( {loadCart} ) => {
 
   const { id } = useParams ()
 
@@ -27,7 +27,7 @@ const ProductData = ( ) => {
   return (
     <div className='dataContainer'>
       <ProdImages prodData={prodData} />
-      <ProductDescription prodData={prodData} />
+      <ProductDescription prodData={prodData} loadCart={loadCart} />
     </div>
   )
 }

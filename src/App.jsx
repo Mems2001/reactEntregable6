@@ -12,12 +12,25 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Cart from './components/Shared/Cart'
 import ProtectedRoutes from './components/Routes/ProtectedRoutes.jsx'
+import getConfig from './utilities/GetConfig'
+import { useDispatch } from 'react-redux'
+import { setCart } from './store/slices/cart.slice'
 
 function App() {
 
-  const [showDetails, setShowDetails] = useState(false)
-
   const [prodId, setProdId] = useState()
+
+  const dispatch = useDispatch()
+
+  const loadCart = () => {
+    const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/cart`
+
+    axios.get(URL , getConfig())
+    .then (res => {
+      dispatch( setCart (res.data.data.cart.products)) 
+    })
+    .catch (err => console.log (err))
+  }
 
   // useEffect (
   //   () => {
@@ -43,14 +56,13 @@ function App() {
       <NavComp />
       <Routes>
         <Route path='/' element={<Home 
-        showDetails={showDetails} 
-        setShowDetails={setShowDetails}
         prodId={prodId}
-        setProdId={setProdId} />} />
-        <Route path='/product/:id' element={<ProductData />} />
+        setProdId={setProdId} 
+        loadCart={loadCart} />} />
+        <Route path='/product/:id' element={<ProductData loadCart={loadCart} />} />
         <Route path='/login' element={ <Login /> } />
         <Route element={ <ProtectedRoutes /> } >
-          <Route path='/cart' element={ <Cart /> } />
+          <Route path='/cart' element={ <Cart loadCart={loadCart} /> } />
           <Route path='/purchases' element={ <Purchases /> } />
         </Route>
         

@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../store/slices/products.slice'
 import ProductCard from '../Home/ProductCard'
-import ProductDetails from '../Home/ProductDetails'
 
-const Home = ({ showDetails , setShowDetails , prodId , setProdId }) => {
+const Home = ({ prodId , setProdId , loadCart }) => {
 
   const dispatch = useDispatch()
 
@@ -24,15 +23,10 @@ const Home = ({ showDetails , setShowDetails , prodId , setProdId }) => {
       prod => <ProductCard 
       key={prod.id}
       prod={prod} 
-      setShowDetails={setShowDetails}
-      showDetails={showDetails}
-      setProdId={setProdId} />
+      setProdId={setProdId} 
+      loadCart={loadCart} />
     )}
-    <ProductDetails 
-    setShowDetails={setShowDetails}
-    showDetails={showDetails}
-    prodId={prodId}
-    setProdId={setProdId} />
+  
    </div>
   )
 }

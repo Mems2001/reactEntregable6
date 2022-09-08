@@ -1,17 +1,16 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import getConfig from '../../utilities/GetConfig'
 
-const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
+const ProductCard = ({prod , setProdId , loadCart}) => {
 
-  // const [readMore, setReadMore] = useState(false)
+  const cartProd = useSelector(state => state.cartSlice)
 
   const [backImg, setBackImg] = useState(true)
 
   const navigate = useNavigate ()
-
-  // const showDescription = () => {
-  //   setReadMore (!readMore)
-  // }
 
   const hover = () => {
     setBackImg (!backImg)   
@@ -31,6 +30,74 @@ const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
     navigate (`/product/${prod.id}`)
   }
 
+  const addProd = e => {
+      e.stopPropagation()
+
+      loadCart ()
+
+      if (cartProd) {
+
+      for (let i=0 ; i < cartProd.length ; i++) {
+        if ( cartProd[i].id == prod.id ) {
+          console.log ('eureka')
+          const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+
+        const obj1 = {
+          id: cartProd[i].id ,
+          newQuantity: cartProd[i].productsInCart.quantity + 1
+        }
+
+        axios.patch (URL, obj1 , getConfig())
+        .then (res => {
+          console.log(res.data)
+          loadCart ()
+        })
+        .catch (err => console.log(err))
+
+        break
+        } else {
+          continue
+        }
+      }
+
+      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+
+        const obj = {
+          id : prod.id ,
+          quantity : 1
+        }
+  
+        axios.post (URL, obj, getConfig())
+        .then (res => {
+          console.log(res.data)
+          loadCart ()
+        })
+        .catch (err => console.log(err))
+
+     } else {
+      
+
+        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+
+        const obj = {
+          id : prod.id ,
+          quantity : 1
+        }
+  
+        axios.post (URL, obj, getConfig())
+        .then (res => {
+          console.log(res.data)
+          loadCart ()
+        })
+        .catch (err => console.log(err))
+
+    }
+  }
+      
+
+  // console.log (cartProd)
+  // console.log (prod)
+
   return (
     <div className='majorCont-prod'>
     <article className='prodArticle' onClick={goToProd} 
@@ -43,16 +110,18 @@ const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
       </header>
       <div className='cardBody'>
         <h3>{prod.title}</h3>
-        <section>
-          <h4>Price</h4>
-        <div className='price'>{prod.price}</div>
+        <section className='priceNadd'>
+          <div>
+            <h4>Price</h4>
+            <div className='price'>{prod.price}</div>
+          </div>
+        <button onClick={addProd} className='cartBtn1'>Add</button>
         </section>
         {/* <div>
           { readMore && <p>{prod.description}</p> }
         </div> */} 
       </div>
     </article>
-    <button className='cartBtn1'>Add</button>
     </div>
   )
 }

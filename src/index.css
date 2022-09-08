@@ -156,6 +156,11 @@ h4 {
   gap: 1vh;
 }
 
+.priceNadd {
+  display: flex;
+  flex-direction: row;
+}
+
 .price {
   margin-left: 1vw;
 }
@@ -177,7 +182,5 @@ h4 {
 }
 
 .cartBtn1 {
-  position: absolute;
-  top: 0;
-  left: 0;
+  
 }
