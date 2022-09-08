@@ -33,7 +33,7 @@ const ProductDescription = ( {prodData , loadCart} ) => {
 
     const handleAdd = () => {
 
-        if (filter) {
+        if (filter != '') {
 
             const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
 

@@ -7,6 +7,10 @@ import CartInfo from '../Cart/CartInfo'
 
 const Cart = ({ loadCart }) => {
 
+  const [priceSum, setPriceSum] = useState(0)
+
+  let partialSum = 0
+
   const cartProd = useSelector(state => state.cartSlice)
 
   const dispatch = useDispatch()
@@ -19,6 +23,19 @@ const Cart = ({ loadCart }) => {
 
       }
     } , []
+  )
+
+  useEffect (
+    () => {
+
+      if (cartProd != null)
+      for (let i=0 ; i < cartProd.length ; i++) {
+        // console.log(cartProd[i].price)
+        partialSum = partialSum + (parseInt(cartProd[i].price) * parseInt(cartProd[i].productsInCart.quantity))
+      }
+
+      setPriceSum(partialSum)
+    } , [cartProd]
   )
 
   const checkOut = () => {
@@ -45,14 +62,21 @@ const Cart = ({ loadCart }) => {
     }
   }
 
-  // console.log (cartProd)
+  console.log (cartProd)
 
   return (
     <section className='cartCard'>
       <div className='cartProdCont'>
         { cartProd?.map(
-          prod => <CartInfo prod={prod} loadCart={loadCart} cartProd={cartProd} />
+          prod => <CartInfo prod={prod} 
+          loadCart={loadCart} 
+          cartProd={cartProd}
+          />
         ) }
+      </div>
+      <div>
+        <h4>Total price:</h4>
+        <span>{priceSum}</span>
       </div>
       <button onClick={checkOut} >CheckOut</button>
     </section>

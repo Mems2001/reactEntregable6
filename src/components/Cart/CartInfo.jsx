@@ -2,7 +2,7 @@ import axios, { Axios } from 'axios'
 import React, { useEffect, useState } from 'react'
 import getConfig from '../../utilities/GetConfig'
 
-const CartInfo = ({prod , loadCart , cartProd}) => {
+const CartInfo = ({prod , loadCart , cartProd }) => {
 
   const [prodForCart, setProdForCart] = useState()
 
@@ -11,7 +11,9 @@ const CartInfo = ({prod , loadCart , cartProd}) => {
       const URL = `https://ecommerce-api-react.herokuapp.com/api/v1/products/${prod.id}`
 
       axios.get(URL)
-      .then(res => setProdForCart(res.data.data.product))
+      .then(res => {
+        setProdForCart(res.data.data.product)
+      })
       .catch(err => console.log(err))
     } , [prod]
   )
