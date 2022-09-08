@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Cart from './components/Shared/Cart'
 import ProtectedRoutes from './components/Routes/ProtectedRoutes.jsx'
-import getConfig from './utilities/GetConfig.js'
+import getConfig from './utilities/getConfig.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCart } from './store/slices/cart.slice'
 
