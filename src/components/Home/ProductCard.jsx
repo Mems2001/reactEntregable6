@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useState } from 'react'
+import axios, { Axios } from 'axios'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import getConfig from '../../utilities/GetConfig'
@@ -31,67 +31,22 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
   }
 
   const addProd = e => {
-      e.stopPropagation()
 
-      loadCart ()
-
-      if (cartProd) {
-
-      for (let i=0 ; i < cartProd.length ; i++) {
-        if ( cartProd[i].id == prod.id ) {
-          console.log ('eureka')
-          const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
-
-        const obj1 = {
-          id: cartProd[i].id ,
-          newQuantity: cartProd[i].productsInCart.quantity + 1
-        }
-
-        axios.patch (URL, obj1 , getConfig())
-        .then (res => {
-          console.log(res.data)
-          loadCart ()
-        })
-        .catch (err => console.log(err))
-
-        break
-        } else {
-          continue
-        }
-      }
+    e.stopPropagation()
 
       const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
 
-        const obj = {
-          id : prod.id ,
-          quantity : 1
-        }
-  
-        axios.post (URL, obj, getConfig())
-        .then (res => {
-          console.log(res.data)
-          loadCart ()
-        })
-        .catch (err => console.log(err))
+      const obj = {
+        id: prod.id ,
+        quantity: 1
+      }
 
-     } else {
-      
+      axios.post (URL , obj , getConfig())
+      .then (res => {
+        loadCart ()
+      })
+      .catch(err => console.log(err))
 
-        const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
-
-        const obj = {
-          id : prod.id ,
-          quantity : 1
-        }
-  
-        axios.post (URL, obj, getConfig())
-        .then (res => {
-          console.log(res.data)
-          loadCart ()
-        })
-        .catch (err => console.log(err))
-
-    }
   }
       
 
@@ -99,15 +54,15 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
   // console.log (prod)
 
   return (
-    <div className='majorCont-prod'>
+    
     <article className='prodArticle' onClick={goToProd} 
     onMouseOver={hover} 
     onMouseOut={hover2}>
-      {/* <button className='detailsBtn' onClick={showDet}>Show Details</button> */}
       <header className='prodHeader' >
         <img className={backImg ? 'prodImg' : 'prodImg1'} src={`${prod.productImgs[0]}`} />
         <img className={backImg ? 'prodImg1' : 'prodImg'} src={prod.productImgs[1]} />
       </header>
+      <hr className='cardHr' />
       <div className='cardBody'>
         <h3>{prod.title}</h3>
         <section className='priceNadd'>
@@ -117,12 +72,9 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
           </div>
         <button onClick={addProd} className='cartBtn1'>Add</button>
         </section>
-        {/* <div>
-          { readMore && <p>{prod.description}</p> }
-        </div> */} 
       </div>
     </article>
-    </div>
+    
   )
 }
 

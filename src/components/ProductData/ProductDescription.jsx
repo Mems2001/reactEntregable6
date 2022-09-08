@@ -1,5 +1,5 @@
 import axios, { Axios } from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import getConfig from '../../utilities/GetConfig'
 
@@ -8,6 +8,8 @@ const ProductDescription = ( {prodData , loadCart} ) => {
     const cartProd = useSelector(state => state.cartSlice)
 
     const [quantity, setQuantity] = useState(0)
+
+    const [filteredProd, setFilteredProd] = useState('')
 
     const addProd = () => {
         setQuantity (quantity + 1)
@@ -19,67 +21,50 @@ const ProductDescription = ( {prodData , loadCart} ) => {
         }
     }
 
-    const add2Cart = () => {
+    const filter = cartProd ? cartProd.filter ( e => e.id == prodData?.id ) : ''
 
-        if (cartProd) {
+    useEffect (
+        () => {
 
-        for (let i=0 ; i < cartProd.length ; i ++) {
-            if (cartProd[i].id == prodData?.id) {
-                console.log ('eureka')
+            console.log (filter)
+            console.log(cartProd)
+        } , [cartProd]
+    )
 
-                const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+    const handleAdd = () => {
 
-                const obj2= {
-                    id: cartProd[i].id ,
-                    newQuantity: cartProd[i].productsInCart.quantity + quantity
-                }
+        if (filter) {
 
-                axios.patch (URL , obj2 , getConfig())
-                .then (res => {
-                    console.log (res.data)
-                    loadCart ()
-                    setQuantity (0)
-                })
-                .catch (err => console.log(err))
+            const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
 
-                break
-            } else {
-                continue
+            const obj = {
+                id: prodData.id ,
+                newQuantity: filter[0].productsInCart.quantity + quantity
             }
-        }
+
+            axios.patch (URL , obj , getConfig())
+            .then (res => {
+                loadCart ()
+                setQuantity(0)
+            })
+            .catch (err => console.log(err))
+
+        } else {
 
         const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
 
         const obj = {
-            id : prodData?.id ,
-            quantity : quantity
+            id: prodData.id ,
+            quantity: quantity
         }
 
         axios.post (URL , obj , getConfig())
         .then (res => {
-            console.log(res.data)
-            setQuantity (0)
             loadCart ()
+            setQuantity(0)
         })
         .catch (err => console.log(err))
-        } else {
-
-            const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
-
-        const obj = {
-            id : prodData?.id ,
-            quantity : quantity
-        }
-
-        axios.post (URL , obj , getConfig())
-        .then (res => {
-            console.log(res.data)
-            setQuantity (0)
-            loadCart ()
-        })
-        .catch (err => console.log(err))
-
-        }
+    }
     }
 
   return (
@@ -100,7 +85,7 @@ const ProductDescription = ( {prodData , loadCart} ) => {
                 </div>
             </div>
         </div>
-        <button onClick={add2Cart}>Add to cart</button>
+        <button onClick={handleAdd}>Add to cart</button>
     </section>
   )
 }

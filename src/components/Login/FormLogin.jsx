@@ -36,19 +36,19 @@ const FormLogin = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-        <h2>Login</h2>
-        <div>
-          <div>
+    <form onSubmit={handleSubmit(submit)} className='formContainer' >
+        <h2 className='loginTitle'>Login</h2>
+        <div className='container4container'>
+          <div className='inputContainer'>
             <label htmlFor='email'>email</label>
             <input {...register('email')} type='text' id='email'/>
           </div>
-          <div>
+          <div className='inputContainer'>
             <label htmlFor='password' >password</label>
             <input {...register('password')} type='password' id='password' />
           </div>
         </div>
-        <button>Login</button>
+        <button className='loginBtn'>Login</button>
     </form>
   )
 }

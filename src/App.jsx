@@ -1,7 +1,7 @@
 import './App.css'
 import './styles/NavComp.css'
-import './styles/ProductDetails.css'
 import './styles/ProductDescription.css'
+import './styles/ProductData.css'
 import { Routes , Route , NavLink} from 'react-router-dom'
 import Home from './components/Routes/Home'
 import ProductData from './components/Routes/ProductData'
@@ -61,7 +61,7 @@ function App() {
         prodId={prodId}
         setProdId={setProdId} 
         loadCart={loadCart} />} />
-        <Route path='/product/:id' element={<ProductData loadCart={loadCart} />} />
+        <Route path='/product/:id' element={<ProductData loadCart={loadCart} setProdId={setProdId} />} />
         <Route path='/login' element={ <Login /> } />
         <Route element={ <ProtectedRoutes /> } >
           <Route path='/cart' element={ <Cart loadCart={loadCart} /> } />
