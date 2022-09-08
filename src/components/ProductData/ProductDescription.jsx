@@ -1,7 +1,7 @@
 import axios, { Axios } from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import getConfig from '../../utilities/GetConfig'
+import getConfig from '../../utilities/getConfig.js'
 
 const ProductDescription = ( {prodData , loadCart} ) => {
 

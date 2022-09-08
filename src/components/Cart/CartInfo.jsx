@@ -1,6 +1,6 @@
 import axios, { Axios } from 'axios'
 import React, { useEffect, useState } from 'react'
-import getConfig from '../../utilities/GetConfig'
+import getConfig from '../../utilities/getConfig.js'
 
 const CartInfo = ({prod , loadCart , cartProd }) => {
 

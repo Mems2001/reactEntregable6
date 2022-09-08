@@ -2,7 +2,7 @@ import axios, { Axios } from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCart } from '../../store/slices/cart.slice'
-import getConfig from '../../utilities/GetConfig'
+import getConfig from '../../utilities/getConfig.js'
 import CartInfo from '../Cart/CartInfo'
 
 const Cart = ({ loadCart }) => {

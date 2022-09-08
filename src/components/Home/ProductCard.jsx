@@ -2,7 +2,7 @@ import axios, { Axios } from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import getConfig from '../../utilities/GetConfig'
+import getConfig from '../../utilities/getConfig.js'
 
 const ProductCard = ({prod , setProdId , loadCart}) => {
 
