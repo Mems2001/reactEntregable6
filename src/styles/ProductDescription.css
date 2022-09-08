@@ -68,8 +68,10 @@
 
 .secondaryImgs {
     height: 15vh;
+    transition: all 0.2s ease-in-out;
 }
 
 .activeImg {
-    box-shadow: 0px 0px 10px 2px var(--bcolor-1);
+    box-shadow: 0px 0px 20px 5px var(--bcolor-1);
+    transition: all 0.2s ease-in-out;
 }

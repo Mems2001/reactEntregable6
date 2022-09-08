@@ -81,7 +81,7 @@ h4 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1vw;
+  gap: 3vw;
   justify-content: center;
   padding-top: 5vh;
   position: relative;
@@ -89,10 +89,15 @@ h4 {
 
 /* CARD */
 
+.majorCont-prod {
+  position: relative;
+}
+
 .prodArticle {
   min-height: 50vh;
   width: 30vw;
   /* border: 1px black solid; */
+  background-color: var(--bcolor-10);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -106,8 +111,8 @@ h4 {
 
 .detailsBtn {
   position: absolute;
-  top: 0;
-  right: 5%;
+  top: 5%;
+  right: 0%;
 }
 
 .prodHeader {
@@ -118,6 +123,7 @@ h4 {
 
 .prodImg {
   height: 25vh;
+  max-width: 25vw;
   position: absolute;
   top: 0;
   left: 0;
@@ -126,10 +132,12 @@ h4 {
   margin: auto;
   opacity: 100;
   transition: opacity 0.4s ease;
+  object-fit: contain;
 }
 
 .prodImg1 {
   height: 25vh;
+  max-width: 28vw;
   position: absolute;
   top: 0;
   left: 0;
@@ -138,6 +146,7 @@ h4 {
   margin: auto;
   opacity: 0;
   transition: opacity 0.4s ease;
+  object-fit: contain;
 }
 
 .cardBody {
@@ -165,4 +174,10 @@ h4 {
   transform: scale(1.05);
   box-shadow: 3px 3px 2px 0px var(--bcolor-2);
   transition: all 0.2s ease-in-out;
+}
+
+.cartBtn1 {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

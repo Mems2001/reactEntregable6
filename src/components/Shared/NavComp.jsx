@@ -11,7 +11,7 @@ const NavComp = () => {
       <ul className="headerList">
         <li className="headerItem"><NavLink className={({isActive}) => isActive ? 'activeLink' : 'notActiveLink'} to='/login' >Login</NavLink></li>
         <li className="headerItem"><NavLink className={({isActive}) => isActive ? 'activeLink' : 'notActiveLink'} to='/purchases' >Purchases</NavLink></li>
-        <li className="headerItem">Cart</li>
+        <li className="headerItem"><NavLink className={({isActive}) => isActive ? 'activeLink' : 'notActiveLink'} to='/cart' >Cart</NavLink></li>
       </ul>
     </nav>
   </header>

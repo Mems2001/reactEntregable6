@@ -10,6 +10,8 @@ import Purchases from './components/Routes/Purchases'
 import NavComp from './components/Shared/NavComp'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Cart from './components/Shared/Cart'
+import ProtectedRoutes from './components/Routes/ProtectedRoutes.jsx'
 
 function App() {
 
@@ -47,7 +49,10 @@ function App() {
         setProdId={setProdId} />} />
         <Route path='/product/:id' element={<ProductData />} />
         <Route path='/login' element={ <Login /> } />
-        <Route path='/purchases' element={ <Purchases /> } />
+        <Route element={ <ProtectedRoutes /> } >
+          <Route path='/cart' element={ <Cart /> } />
+          <Route path='/purchases' element={ <Purchases /> } />
+        </Route>
         
       </Routes>
     </div>

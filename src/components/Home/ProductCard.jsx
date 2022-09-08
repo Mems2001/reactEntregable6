@@ -21,10 +21,10 @@ const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
     setBackImg (!backImg)
   } 
 
-  const showDet = () => {
-    setShowDetails(!showDetails)
-    setProdId( `${prod.id}` )
-  }
+  // const showDet = () => {
+  //   setShowDetails(!showDetails)
+  //   setProdId( `${prod.id}` )
+  // }
 
   const goToProd = () => {
     setProdId ( `${prod.id}` )
@@ -32,8 +32,11 @@ const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
   }
 
   return (
-    <article className='prodArticle' onMouseOver={hover} onMouseOut={hover2}>
-      <button className='detailsBtn' onClick={showDet}>Show Details</button>
+    <div className='majorCont-prod'>
+    <article className='prodArticle' onClick={goToProd} 
+    onMouseOver={hover} 
+    onMouseOut={hover2}>
+      {/* <button className='detailsBtn' onClick={showDet}>Show Details</button> */}
       <header className='prodHeader' >
         <img className={backImg ? 'prodImg' : 'prodImg1'} src={`${prod.productImgs[0]}`} />
         <img className={backImg ? 'prodImg1' : 'prodImg'} src={prod.productImgs[1]} />
@@ -46,10 +49,11 @@ const ProductCard = ({prod , setShowDetails , showDetails , setProdId}) => {
         </section>
         {/* <div>
           { readMore && <p>{prod.description}</p> }
-        </div> */}
-        <button onClick={goToProd} >See more</button>
+        </div> */} 
       </div>
     </article>
+    <button className='cartBtn1'>Add</button>
+    </div>
   )
 }
 

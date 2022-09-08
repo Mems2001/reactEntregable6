@@ -26,10 +26,11 @@ const FormLogin = () => {
 
     axios.post (URL , data)
     .then (res => {
-      console.log(res)
+      console.log(res.data)
+      localStorage.setItem('token' , res.data.data.token)
       dispatch(setLogin ())
-      // reset(defaultUser)
-      // navigate ('/')
+      reset(defaultUser)
+      navigate ('/')
     })
     .catch (err => console.log(err))
   }
