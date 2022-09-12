@@ -78,7 +78,9 @@ const Cart = ({ loadCart }) => {
         <h4>Total price:</h4>
         <span>{priceSum}</span>
       </div>
-      <button onClick={checkOut} >CheckOut</button>
+      <button className='checkoutBtn' onClick={checkOut} >
+      <i class="fa-solid fa-money-bill"></i>
+      </button>
     </section>
   )
 }

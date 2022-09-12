@@ -90,13 +90,19 @@ const CartInfo = ({prod , loadCart , cartProd }) => {
         <div>
           <h4>Quantity</h4>
           <div className='quantity'>
-            <button onClick={handleRemove}>-</button>
+            <button className='arrowBtn' onClick={handleRemove}>
+            <i class="fa-solid fa-caret-left"></i>
+            </button>
             <span> {prod.productsInCart.quantity} </span>
-            <button onClick={handleAdd}>+</button>
+            <button className='arrowBtn' onClick={handleAdd}>
+            <i class="fa-solid fa-caret-right"></i>
+            </button>
             </div>
         </div>
       </section>
-        <button onClick={removeProd} >eliminar</button>
+        <button className='deleteBtn' onClick={removeProd} >
+        <i class="fa-solid fa-trash-can"></i>
+        </button>
     </article>
   ) }
   else {
