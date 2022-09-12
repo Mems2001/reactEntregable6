@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import getConfig from '../../utilities/getConfig.js'
 
-const ProductCard = ({prod , setProdId , loadCart}) => {
+const ProductCard = ({prod , setProdId , loadCart, cartProd}) => {
 
-  const cartProd = useSelector(state => state.cartSlice)
+  const [productInCart, setProductInCart] = useState()
 
   const [backImg, setBackImg] = useState(true)
 
@@ -30,6 +30,21 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
     navigate (`/product/${prod.id}`)
   }
 
+  useEffect (
+    () => {
+      if (cartProd) {
+
+        for (let i=0 ; i < cartProd.length ; i++) {
+          if (cartProd[i].id == prod.id) {
+            setProductInCart (cartProd[i])
+          }
+        }
+
+      }
+
+    } , [cartProd]
+  )
+
   const addProd = e => {
 
     e.stopPropagation()
@@ -48,8 +63,26 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
       .catch(err => console.log(err))
 
   }
-      
 
+  const addMore = e => {
+
+    e.stopPropagation()
+
+      const URL = 'https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+
+      const obj = {
+        id: prod.id ,
+        newQuantity: productInCart.productsInCart.quantity + 1
+      }
+
+      axios.patch (URL , obj , getConfig())
+      .then (res => {
+        loadCart ()
+      })
+      .catch(err => console.log(err))
+
+  }
+      
   // console.log (cartProd)
   // console.log (prod)
 
@@ -70,9 +103,13 @@ const ProductCard = ({prod , setProdId , loadCart}) => {
             <h4>Price</h4>
             <div className='price'>{prod.price}</div>
           </div>
-        <button onClick={addProd} className='cartBtn1'>Add</button>
+        <button onClick={productInCart ? addMore : addProd } className='cartBtn1'>
+        <i class="fa-solid fa-cart-plus"></i>
+        </button>
         </section>
       </div>
+      { productInCart && <button className='homeQuantBtn' >{productInCart.productsInCart.quantity}</button> }
+      
     </article>
     
   )

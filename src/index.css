@@ -124,6 +124,7 @@ h4 {
   justify-content: center;
   padding-top: 5vh;
   position: relative;
+  margin-bottom: 10vh;
 }
 
 /* CARD */
@@ -144,12 +145,6 @@ h4 {
   padding-bottom: 0;
   position: relative;
   transition: all 0.2s ease-in-out;
-}
-
-.detailsBtn {
-  position: absolute;
-  top: 5%;
-  right: 0%;
 }
 
 .prodHeader {
@@ -197,8 +192,8 @@ h4 {
 .cardBody {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1vh;
+  justify-content:center;
+  gap: 2vh;
   height: 100%;
   width: 100%;
 }
@@ -208,6 +203,7 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .price {
@@ -231,7 +227,34 @@ h4 {
 }
 
 .cartBtn1 {
-  
+  border: none;
+  background-color: var(--bcolor-10) ;
+  height: 5vh;
+  width: 5vh;
+  transform: scale(1.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease
+}
+
+.cartBtn1:hover {
+  transform: scale(2);
+  transition: all 0.2s ease;
+  background-color: var(--bcolor-6);
+}
+
+.homeQuantBtn {
+  border: none;
+  border-radius: 50%;
+  background-color: var(--bcolor-1);
+  position: absolute;
+  top: -2%;
+  right: -2%;
+  height: 5vh;
+  width: 5vh;
+  text-align: center;
+  color: white;
+  font-weight: 700;
 }
 
 /* LOGIN  */

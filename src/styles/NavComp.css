@@ -10,7 +10,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     height: 15vh;
     align-items: center;
     background-color: var(--bcolor-10);
@@ -24,7 +24,7 @@ a {
 .headerList {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content:right;
     width: 60vw;
     height: 100%;
 }

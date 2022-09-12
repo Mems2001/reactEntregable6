@@ -5,6 +5,8 @@ import ProductCard from '../Home/ProductCard'
 
 const Home = ({ prodId , setProdId , loadCart }) => {
 
+  const cartProd = useSelector (state => state.cartSlice)
+
   const dispatch = useDispatch()
 
   useEffect (
@@ -17,6 +19,7 @@ const Home = ({ prodId , setProdId , loadCart }) => {
   const allProd = useSelector(state => state.productsSlice)
 
   // console.log (prodId)
+  console.log(cartProd)
 
   return (
    <div className='prodContainer'>
@@ -25,7 +28,8 @@ const Home = ({ prodId , setProdId , loadCart }) => {
       key={prod.id}
       prod={prod} 
       setProdId={setProdId} 
-      loadCart={loadCart} />
+      loadCart={loadCart} 
+      cartProd={cartProd} />
     )}
   
    </div>
