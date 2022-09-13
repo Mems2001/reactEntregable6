@@ -100,6 +100,10 @@ a {
     display: none;
   }
 
+  .mobileCloseBtn {
+    display: none;
+  }
+
 @media screen and (max-width:767px) {
 
     .headerCont {
