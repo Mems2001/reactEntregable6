@@ -44,11 +44,42 @@
 .imgsBtn1 {
     position: absolute;
     left: 5%;
+    border: 0;
+    height: 5vh;
+    width: 5vh;
+    background-color: var(--bcolor-6);
+    border-radius: 50%;
 }
 
 .imgsBtn2 {
     position: absolute;
     right: 5%;
+    border: 0;
+    height: 5vh;
+    width: 5vh;
+    background-color: var(--bcolor-6);
+    border-radius: 50%;
+}
+
+.quantityCont {
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+    align-items: center;
+}
+
+.differentArrowBtn {
+    border: none;
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+    background-color: var(--bcolor-10);
+    transition: all 0.2s ease-in-out ;
+}
+
+.differentArrowBtn:hover {
+    background-color: var(--bcolor-6);
+    transition: all 0.2s ease-in-out ;
 }
 
 .secondaryImgsContainer {
@@ -77,7 +108,7 @@
         width: 85vw;
         box-shadow: 0px 0px 3px 2px var(--bcolor-3);
         padding: 3%;
-        height: fit-content;
+        height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

@@ -19,6 +19,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3vh;
+    margin-top: 5vh;
 }
 
 @media screen and (max-width:767px) {
@@ -29,6 +30,14 @@
         justify-content: center;
         align-items: center;
         gap: 5vh
+    }
+
+    .mainRelatedCont {
+        margin-top: 10vh;
+    }
+
+    .relatedContainer {
+        justify-content: center;
     }
     
 }

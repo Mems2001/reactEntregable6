@@ -78,10 +78,14 @@ const ProductDescription = ( {prodData , loadCart} ) => {
             </div>
             <div>
                 <h4>Quantity</h4>
-                <div>
-                    <button onClick={delProd}>-1</button>
+                <div className='quantityCont'>
+                    <button className='differentArrowBtn' onClick={delProd}>
+                        <i className="fa-solid fa-caret-left"></i>
+                    </button>
                     <span>{quantity}</span>
-                    <button onClick={addProd}>+1</button>
+                    <button className='differentArrowBtn' onClick={addProd}>
+                        <i className="fa-solid fa-caret-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

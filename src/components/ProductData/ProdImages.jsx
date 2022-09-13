@@ -19,9 +19,13 @@ const ProdImages = ( {prodData} ) => {
   return (
     <div className='prodImages'>
         <div className='mainImgContainer'>
-            <button className='imgsBtn1' onClick={prevImg}>Prev</button>
+            <button className='imgsBtn1' onClick={prevImg}>
+                <i className="fa-solid fa-caret-left"></i>
+            </button>
             <img className='mainImg' src={prodData?.productImgs[`${imgNumber}`]} />
-            <button className='imgsBtn2' onClick={nextImg} >Next</button>
+            <button className='imgsBtn2' onClick={nextImg} >
+                <i className="fa-solid fa-caret-right"></i>
+            </button>
         </div>
         <div className='secondaryImgsContainer'>
             {prodData?.productImgs.map (
