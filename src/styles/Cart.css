@@ -104,3 +104,57 @@ h3 {
     transition: all 0.2s ease;
     border-radius: 50%;
 }
+
+@media screen and (max-width:767px) {
+
+    .cartProdCont {
+        justify-content: center;
+    }
+    
+    .cartCards {
+        height: 33vh;
+        width: 55vw;
+        padding: 5%;
+        gap: 2vh;
+    }
+
+    .cartImgs {
+        max-height: 10vh;
+        max-width: 25vw;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    .priceNadd {
+       justify-content: space-between;
+    }
+
+}
+
+@media screen and (max-height:500px) {
+
+    .cartProdCont {
+        column-gap: 5vw;
+        row-gap: 15vh;
+        padding-top: 6vh;
+    }
+
+    .cartCards {
+        height: 62vh;
+        width: 25vw;
+        padding: 3%;
+        gap: 2vh;
+    }
+
+    .cartImgs {
+        max-height: 15vh;
+        max-width: 35vw;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    .priceNadd {
+        justify-content: space-between;
+     }
+    
+}
