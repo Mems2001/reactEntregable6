@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ProdImages from '../ProductData/ProdImages'
+import ProdImagesMob from '../ProductData/ProdImagesMob'
 import ProductDescription from '../ProductData/ProductDescription'
 import RelatedProducts from '../ProductData/RelatedProducts'
 
@@ -30,6 +31,7 @@ const ProductData = ( {loadCart , setProdId} ) => {
   return (
     <div className='dataContainer'>
       <ProdImages prodData={prodData} />
+      <ProdImagesMob prodData={prodData} />
       <ProductDescription prodData={prodData} loadCart={loadCart} />
       <RelatedProducts prodData={prodData} setProdId={setProdId} loadCart={loadCart} />
     </div>

@@ -2,7 +2,10 @@
     display: grid;
     grid-template-columns: repeat(2 , auto);
     grid-template-rows:  repeat(2 ,auto);
-    gap: 10vh
+    gap: 10vh;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 5%;
 }
 
 .mainRelatedCont {
@@ -16,4 +19,16 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3vh;
+}
+
+@media screen and (max-width:767px) {
+
+    .dataContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vh
+    }
+    
 }
