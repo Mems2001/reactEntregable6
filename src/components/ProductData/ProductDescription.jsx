@@ -89,7 +89,9 @@ const ProductDescription = ( {prodData , loadCart} ) => {
                 </div>
             </div>
         </div>
-        <button onClick={handleAdd}>Add to cart</button>
+        <button className='cartDescriptionBtn' onClick={handleAdd}>
+            <i className="fa-solid fa-cart-plus"></i>
+        </button>
     </section>
   )
 }
