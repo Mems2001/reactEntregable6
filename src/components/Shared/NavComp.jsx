@@ -5,6 +5,8 @@ import { setLogin, setLogout } from '../../store/slices/user.slice'
 
 const NavComp = () => {
 
+  const [forMenu, setForMenu] = useState(false)
+
   const logged = useSelector (state => state.userSlice)
 
   const dispatch = useDispatch()
@@ -22,6 +24,14 @@ const NavComp = () => {
     }, [logged]
   )
 
+  const showMenu = () => {
+    setForMenu(true)
+  }
+
+  const hideMenu = () => {
+    setForMenu(false)
+  }
+
   return (
     <header className='headerCont'>
     <NavLink to='/' >
@@ -34,6 +44,24 @@ const NavComp = () => {
         <li className="headerItem"><NavLink className={({isActive}) => isActive ? 'activeLink' : 'notActiveLink'} to='/cart' >Cart</NavLink></li>
       </ul>
     </nav>
+
+    {/* MOBILE */}
+
+    <button className='mobileNav' onClick={showMenu}>
+      <i className="fa-solid fa-bars menuIcon"></i>
+    </button>
+
+    <section className={`mobileMenu showMenu${forMenu}`}>
+      <ul className={`linksContainerMob showMenu${forMenu}`}>
+        <li className='mobileLinks' ><NavLink to='/login'>Login</NavLink></li>
+        <li className='mobileLinks' ><NavLink to='/purchases'>Purchases</NavLink></li>
+        <li className='mobileLinks' ><NavLink to='/cart'>Cart</NavLink></li>
+      </ul>
+      <button className='mobileCloseBtn' onClick={hideMenu} >X</button>
+    </section>
+
+    <section className={`mobBackMenu showBack${forMenu}`}></section>
+
   </header>
   )
 }

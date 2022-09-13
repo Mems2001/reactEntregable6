@@ -103,7 +103,7 @@ const ProductCard = ({prod , setProdId , loadCart, cartProd}) => {
         </button>
         </section>
       </div>
-      { productInCart && <button className='homeQuantBtn' >{productInCart.productsInCart.quantity}</button> }
+      { productInCart && localStorage.getItem('token') && <button className='homeQuantBtn' >{productInCart.productsInCart.quantity}</button> }
       
     </article>
     
