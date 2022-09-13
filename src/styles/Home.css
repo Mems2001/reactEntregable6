@@ -187,8 +187,9 @@
   @media screen and (max-height:500px) {
 
     .prodContainer {
-        padding-top: 13vh;
-        gap: 12vh;
+        padding-top: 12vh;
+        row-gap: 15vh;
+        column-gap: 10vh;
     }
 
     .prodArticle {

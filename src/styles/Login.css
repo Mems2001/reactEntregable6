@@ -81,3 +81,56 @@
     transform: scale(3.5);
     transition: all 0.2s ease;
   }
+
+  @media screen and (max-width:767px) {
+    
+    .formContainer {
+      width: 80vw;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      gap: 7vh;
+      background-color: var(--bcolor-6);
+      border-radius: 10%;
+      padding: 5%;
+      padding-top: 10%;
+      padding-bottom: 15%;
+    }
+
+  }
+
+  @media screen and (max-height:500px) {
+
+    .formContainer {
+      width: 50vw;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      gap: 7vh;
+      background-color: var(--bcolor-6);
+      border-radius: 10%;
+      padding: 5%;
+      padding-top: 4%;
+      padding-bottom: 4%;
+    }
+
+    .loginBtn {
+      border: none;
+      background-color: var(--bcolor-10);
+      height: 7vh;
+      width: 7vh;
+      transform: scale(1.7);
+      border-radius: 50%;
+      align-self: center;
+      cursor: pointer;
+      transition: all 0.2s ease ;
+    }
+
+    .loginBtn:hover {
+      transform: scale(2);      
+    }
+  
+    
+  }
