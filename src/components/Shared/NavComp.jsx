@@ -57,7 +57,7 @@ const NavComp = () => {
         <li className='mobileLinks' ><NavLink to='/purchases'>Purchases</NavLink></li>
         <li className='mobileLinks' ><NavLink to='/cart'>Cart</NavLink></li>
       </ul>
-      <button className='mobileCloseBtn' onClick={hideMenu} >X</button>
+      <button className={`mobileCloseBtn showMenu${forMenu}`} onClick={hideMenu} >X</button>
     </section>
 
     <section className={`mobBackMenu showBack${forMenu}`}></section>
