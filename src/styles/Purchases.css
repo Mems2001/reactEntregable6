@@ -64,3 +64,49 @@
     align-self:flex-end;
     width: 30%;
 }
+
+@media screen and (max-width:767px) {
+
+    .purchasesContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+    }
+    
+    .purchaseCard {
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        height: fit-content;
+        gap: 2vh;
+        margin-bottom: 4vh;
+    }
+
+    .prodsPurchased {
+        flex-wrap: wrap;
+    }
+
+    .objectTitle {
+        width: 50%;
+    }
+    
+    .purchaseQuant {
+        width: 50%;
+    }
+    
+    .indivPrice {
+        width: 50%;
+    }
+    
+    .parcialPrice {
+        width: 50%;
+    }
+
+    .totalPrice {
+        align-self:center;
+        width:50%;
+    }
+
+}

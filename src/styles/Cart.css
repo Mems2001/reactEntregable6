@@ -156,5 +156,10 @@ h3 {
     .priceNadd {
         justify-content: space-between;
      }
+
+     .arrowBtn {
+        height: 6vh;
+        width: 6vh;
+    }
     
 }
