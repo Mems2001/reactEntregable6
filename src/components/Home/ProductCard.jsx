@@ -20,11 +20,6 @@ const ProductCard = ({prod , setProdId , loadCart, cartProd}) => {
     setBackImg (!backImg)
   } 
 
-  // const showDet = () => {
-  //   setShowDetails(!showDetails)
-  //   setProdId( `${prod.id}` )
-  // }
-
   const goToProd = () => {
     setProdId ( `${prod.id}` )
     navigate (`/product/${prod.id}`)
@@ -104,7 +99,7 @@ const ProductCard = ({prod , setProdId , loadCart, cartProd}) => {
             <div className='price'>{prod.price}</div>
           </div>
         <button onClick={productInCart ? addMore : addProd } className='cartBtn1'>
-        <i class="fa-solid fa-cart-plus"></i>
+        <i className="fa-solid fa-cart-plus"></i>
         </button>
         </section>
       </div>

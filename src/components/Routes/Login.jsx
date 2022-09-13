@@ -28,7 +28,10 @@ const Login = () => {
 
   if (logged) {
     return <div className='logoutCont'>
-      <button onClick={loggingOut} >Logout</button>
+      <h2>Logout</h2>
+      <button className='logoutBtn' onClick={loggingOut} >
+        <i className="fa-solid fa-person-walking-arrow-right"></i>
+      </button>
       </div>
   }
 

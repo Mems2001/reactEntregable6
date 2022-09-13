@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import PurchaseCardInfo from './PurchaseCardInfo'
 
 const PurchaseCard = ({purchase}) => {
 
     const [pricesSum, setPricesSum] = useState()
+
+    const [purchaseDate, setPurchaseDate] = useState()
 
     let sum = 0
 
@@ -12,36 +15,29 @@ const PurchaseCard = ({purchase}) => {
     
     useEffect (
         () => {
+            setPurchaseDate(new Date(purchase.updatedAt))
+
             setPricesSum(sum)
-        } , [sum]
+
+        } , [sum, purchase]
     )
     // console.log(pricesSum)
+    // console.log(purchase)
+    // console.log(purchaseDate)
 
   return (
     <div className='purchaseCard'>
         <header className='purchaseHeader'>
             <h3>{purchase.cart.status}</h3>
-            <h3>{purchase.updatedAt}</h3>
+            {/* <h3>{purchase.id}</h3> */}
+            <h3>{purchaseDate?.getHours()}:{purchaseDate?.getMinutes()<10 ? `0${purchaseDate?.getMinutes()}` : purchaseDate?.getMinutes() } - {purchaseDate?.getUTCDate()<10 ? `0${purchaseDate?.getUTCDate()}` : purchaseDate?.getUTCDate() } / {purchaseDate?.getMonth()<10 ? `0${purchaseDate?.getMonth()}` : purchaseDate?.getMonth() } / {purchaseDate?.getUTCFullYear()}</h3>
         </header>
         <div className='purchaseProds'>
             {purchase.cart.products.map(
-                object => <div className='prodsPurchased'> 
-                    <span className='objectTitle'>{object.title}</span>
-                    <span className='purchaseQuant'>
-                        <h4>Quantity: </h4>
-                        <span>{object.productsInCart.quantity}</span>
-                    </span>
-                    <span className='indivPrice'>
-                        <h4>Individual price:</h4>
-                        <span>{object.price}</span>
-                    </span>
-                    <span className='parcialPrice'>
-                        <h4>Price:</h4>
-                        <span>
-                            {object.price * object.productsInCart.quantity}
-                        </span>
-                    </span>
-                    </div>
+                object => <PurchaseCardInfo 
+                key={object.id}
+                object={object} 
+                 />
             )}
         </div>
         <footer className='totalPrice'>

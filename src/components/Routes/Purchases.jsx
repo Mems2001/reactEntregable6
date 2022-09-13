@@ -13,7 +13,7 @@ const Purchases = () => {
 
       axios.get (URL , getConfig ())
       .then (res => {
-        console.log(res.data.data.purchases)
+        // console.log(res.data.data.purchases)
         setPurchases(res.data.data.purchases)
       })
       .catch (err => console.log(err))
@@ -21,7 +21,7 @@ const Purchases = () => {
   )
 
   return (
-    <div>
+    <div className='purchasesContainer'>
       <ul>
         {purchases?.map(
           purchase => <li>

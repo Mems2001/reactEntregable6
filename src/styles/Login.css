@@ -1,0 +1,83 @@
+.formContainer {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 7vh;
+    background-color: var(--bcolor-6);
+    border-radius: 25%;
+    padding: 5%;
+  }
+  
+  .loginContainer {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loginTitle {
+    color: var(--bcolor-1);
+  }
+  
+  .container4container {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .loginBtn {
+    border: none;
+    background-color: var(--bcolor-10);
+    height: 5vh;
+    width: 5vh;
+    transform: scale(2);
+    border-radius: 50%;
+    align-self: center;
+    cursor: pointer;
+    transition: all 0.2s ease ;
+  }
+  
+  .loginBtn:hover {
+    background-color: var(--bcolor-6);
+    transform: scale(3.5);
+    transition: all 0.2s ease ;
+    
+  }
+  
+  .logoutCont {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    height: 45vh;
+    margin-top: 20vh;
+    width: 25vw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bcolor-6);
+    border-radius: 25%;
+  }
+  
+  .logoutBtn {
+    border: none;
+    background-color: var(--bcolor-10);
+    transform: scale(2);
+    height: 5vh;
+    width: 5vh;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .logoutBtn:hover {
+    background-color: var(--bcolor-6);
+    transform: scale(3.5);
+    transition: all 0.2s ease;
+  }

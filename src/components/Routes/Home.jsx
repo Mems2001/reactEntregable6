@@ -13,13 +13,18 @@ const Home = ({ prodId , setProdId , loadCart }) => {
     () => {
       dispatch(getAllProducts())
       setProdId()
+
+      if (cartProd) {
+        loadCart()
+      }
+
     }, []
   )
 
   const allProd = useSelector(state => state.productsSlice)
 
   // console.log (prodId)
-  console.log(cartProd)
+  // console.log(cartProd)
 
   return (
    <div className='prodContainer'>

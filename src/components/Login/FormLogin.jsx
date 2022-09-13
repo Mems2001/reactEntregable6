@@ -40,15 +40,17 @@ const FormLogin = () => {
         <h2 className='loginTitle'>Login</h2>
         <div className='container4container'>
           <div className='inputContainer'>
-            <label htmlFor='email'>email</label>
+            <label className='loginLabel' htmlFor='email'>email</label>
             <input {...register('email')} type='text' id='email'/>
           </div>
           <div className='inputContainer'>
-            <label htmlFor='password' >password</label>
+            <label className='loginLabel' htmlFor='password' >password</label>
             <input {...register('password')} type='password' id='password' />
           </div>
         </div>
-        <button className='loginBtn'>Login</button>
+        <button className='loginBtn'>
+          <i className="fa-solid fa-right-to-bracket"></i>
+        </button>
     </form>
   )
 }

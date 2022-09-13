@@ -57,6 +57,10 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 h4 {
   margin: 0;
   font-size: 0.8rem;
@@ -255,50 +259,4 @@ h4 {
   text-align: center;
   color: white;
   font-weight: 700;
-}
-
-/* LOGIN  */
-
-.loginContainer {
-  display: flex;
-  height: 80vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.loginTitle {
-  color: var(--bcolor-1);
-}
-
-.formContainer {
-  width: 25vw;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  gap: 2vh
-}
-
-.container4container {
-  display: flex;
-  flex-direction: column;
-  gap: 3vh;
-}
-
-.inputContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.loginBtn {
-
-}
-
-.logoutCont {
-  display: flex;
-  height: 85vh;
-  width: 25vw;
-  justify-content: center;
-  align-items: center;
 }

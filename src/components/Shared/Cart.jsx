@@ -62,13 +62,15 @@ const Cart = ({ loadCart }) => {
     }
   }
 
-  console.log (cartProd)
+  // console.log (cartProd)
 
   return (
     <section className='cartCard'>
       <div className='cartProdCont'>
         { cartProd?.map(
-          prod => <CartInfo prod={prod} 
+          prod => <CartInfo 
+          key={prod.id}
+          prod={prod} 
           loadCart={loadCart} 
           cartProd={cartProd}
           />
@@ -79,7 +81,7 @@ const Cart = ({ loadCart }) => {
         <span>{priceSum}</span>
       </div>
       <button className='checkoutBtn' onClick={checkOut} >
-      <i class="fa-solid fa-money-bill"></i>
+      <i className="fa-solid fa-money-bill"></i>
       </button>
     </section>
   )

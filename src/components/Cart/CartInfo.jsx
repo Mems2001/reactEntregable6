@@ -91,17 +91,17 @@ const CartInfo = ({prod , loadCart , cartProd }) => {
           <h4>Quantity</h4>
           <div className='quantity'>
             <button className='arrowBtn' onClick={handleRemove}>
-            <i class="fa-solid fa-caret-left"></i>
+            <i className="fa-solid fa-caret-left"></i>
             </button>
             <span> {prod.productsInCart.quantity} </span>
             <button className='arrowBtn' onClick={handleAdd}>
-            <i class="fa-solid fa-caret-right"></i>
+            <i className="fa-solid fa-caret-right"></i>
             </button>
             </div>
         </div>
       </section>
         <button className='deleteBtn' onClick={removeProd} >
-        <i class="fa-solid fa-trash-can"></i>
+        <i className="fa-solid fa-trash-can"></i>
         </button>
     </article>
   ) }
