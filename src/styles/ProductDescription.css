@@ -49,6 +49,13 @@
     width: 5vh;
     background-color: var(--bcolor-6);
     border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.imgsBtn1:hover {
+    transform: scale(1.5);
+    transition: all 0.2s ease;
 }
 
 .imgsBtn2 {
@@ -59,6 +66,13 @@
     width: 5vh;
     background-color: var(--bcolor-6);
     border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.imgsBtn2:hover {
+    transform: scale(1.5);
+    transition: all 0.2s ease;
 }
 
 .quantityCont {
@@ -73,6 +87,7 @@
     border-radius: 50%;
     height: fit-content;
     width: fit-content;
+    cursor: pointer;
     background-color: var(--bcolor-10);
     transition: all 0.2s ease-in-out ;
 }
@@ -91,6 +106,13 @@
     transform: scale(1.5);
     margin-bottom: 2vh;
     margin-top: 2vh;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cartDescriptionBtn:hover {
+    background-color: var(--bcolor-6);
+    transition: all 0.2s ease;
 }
 
 .secondaryImgsContainer {
