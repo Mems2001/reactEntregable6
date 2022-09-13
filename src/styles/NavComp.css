@@ -104,10 +104,12 @@ a {
     display: none;
   }
 
+  /* --------------------------------------------- MEDIA QUERIES ----------------------------------------------- */
+
 @media screen and (max-width:767px) {
 
     .headerCont {
-        height: 10vh;
+        height: 8vh;
     }
 
     .headerTitle {
@@ -122,8 +124,8 @@ a {
     .mobileNav {
         display: flex;
         position: relative;
-        height: 10vh;
-        width: 10vh;
+        height: 8vh;
+        width: 8vh;
         background-color: inherit;
         border: none;
         justify-content: center;

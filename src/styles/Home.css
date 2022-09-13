@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1vh;
     padding-right: 3%;
     padding-left: 3%;
@@ -180,6 +180,47 @@
 
       .cardHr {
         top: 55%
+      }
+
+  } 
+
+  @media screen and (max-height:500px) {
+
+    .prodContainer {
+        gap: 6vh;
+    }
+
+    .prodArticle {
+        width: 25vw;
+        min-height: 20vh;
+        gap: 9vh;
+        padding: 3%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .prodHeader {
+        position: relative;
+        height: 17vh;
+        width: 100%;
+      }
+
+      .prodImg {
+        max-height: 15vh;
+        max-width: 30vw;
+      }
+
+      .prodImg1 {
+        max-height: 15vh;
+        max-width: 30vw;
+      }
+
+      .cardBody {
+        height: fit-content;
+      }
+
+      .cardHr {
+        top: 45%
       }
 
   }
