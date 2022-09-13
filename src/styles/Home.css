@@ -145,6 +145,10 @@
 
   @media screen and (max-width:767px) { 
 
+    .prodContainer {
+        gap: 4vh;
+    }
+
     .prodArticle {
         width: 60vw;
         min-height: 25vh;
