@@ -210,3 +210,46 @@ a {
         display: flex;
     }
  }
+
+ @media screen and (max-width:1024px) {
+    
+    .headerCont {
+        height: 10vh;
+    }
+
+    .activeLink {
+ 
+        height: 10vh;
+        width: 20vw;
+        
+      }
+      
+      .activeLink:hover {
+        
+        height: 7vh;
+        width: 15vw;
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+        margin-left: calc(2.5vw - 2px);
+        margin-right: calc(2.5vw - 2px);
+      }
+      
+      .notActiveLink {
+       
+        height: 10vh;
+        width: 20vw;
+    
+      }
+      
+      .notActiveLink:hover {
+       
+        height: 7vh;
+        width: 10vw;
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+        margin-left: calc(2.5vw - 2px);
+        margin-right: calc(2.5vw - 2px);
+        
+      }
+
+ }

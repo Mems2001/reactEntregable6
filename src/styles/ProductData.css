@@ -11,6 +11,7 @@
 .mainRelatedCont {
     grid-column-start: 1;
     grid-column-end: 3;
+    margin-top: 5vh;
 }
 
 .relatedContainer {
@@ -39,4 +40,13 @@
         justify-content: center;
     }
     
+}
+
+@media screen and (max-width:1024px) {
+    
+    .dataContainer {
+        column-gap: 0;
+        padding-top: 10vh;
+    }
+
 }
