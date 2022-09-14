@@ -82,6 +82,25 @@
     transition: all 0.2s ease;
   }
 
+  /* ---------------------------------------- MEDIA QUERIES ----------------------------------- */
+
+  @media screen and (max-width:1024px) {
+
+    .logoutCont {
+      gap: 10vh;
+      height: 40vh;
+      margin-top: 20vh;
+      width: 50vw;
+      border-radius: 15%;
+    }
+
+    .formContainer {
+      width: 50vw;
+      border-radius: 15%;
+    }
+
+  }
+
   @media screen and (max-width:767px) {
     
     .formContainer {
@@ -132,21 +151,4 @@
       transform: scale(2);      
     }
   
-  }
-
-  @media screen and (max-width:1024px) {
-
-    .logoutCont {
-      gap: 10vh;
-      height: 40vh;
-      margin-top: 20vh;
-      width: 50vw;
-      border-radius: 15%;
-    }
-
-    .formContainer {
-      width: 50vw;
-      border-radius: 15%;
-    }
-
   }

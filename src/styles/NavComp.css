@@ -107,6 +107,49 @@ a {
 
   /* --------------------------------------------- MEDIA QUERIES ----------------------------------------------- */
 
+  @media screen and (max-width:1024px) {
+    
+    .headerCont {
+        height: 10vh;
+    }
+
+    .activeLink {
+ 
+        height: 10vh;
+        width: 20vw;
+        
+      }
+      
+      .activeLink:hover {
+        
+        height: 7vh;
+        width: 15vw;
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+        margin-left: calc(2.5vw - 2px);
+        margin-right: calc(2.5vw - 2px);
+      }
+      
+      .notActiveLink {
+       
+        height: 10vh;
+        width: 20vw;
+    
+      }
+      
+      .notActiveLink:hover {
+       
+        height: 7vh;
+        width: 10vw;
+        margin-top: 1.5vh;
+        margin-bottom: 1.5vh;
+        margin-left: calc(2.5vw - 2px);
+        margin-right: calc(2.5vw - 2px);
+        
+      }
+
+ }
+
 @media screen and (max-width:767px) {
 
     .headerCont {
@@ -171,20 +214,25 @@ a {
 
     .linksContainerMob li:nth-child(1) {
         top: 5%;
+        left: 25%;
     }
 
     .linksContainerMob li:nth-child(2) {
         top: 40%;
-        right: 40%;
+        left: 35% ;
+        transform: rotateZ(-45deg);
     }
 
     .linksContainerMob li:nth-child(3) {
-        top: 70%;
-        right: 20%;
+        top: 60%;
+        right: 15%;
     }
 
     .mobileCloseBtn {
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         top: 0;
         right: 0;
         height: 10vh;
@@ -209,47 +257,13 @@ a {
     .showBacktrue {
         display: flex;
     }
- }
 
- @media screen and (max-width:1024px) {
-    
-    .headerCont {
-        height: 10vh;
+    .activeLinkMob {
+        color: var(--bcolor-1);
+        font-weight: 700;
     }
 
-    .activeLink {
- 
-        height: 10vh;
-        width: 20vw;
-        
-      }
-      
-      .activeLink:hover {
-        
-        height: 7vh;
-        width: 15vw;
-        margin-top: 1.5vh;
-        margin-bottom: 1.5vh;
-        margin-left: calc(2.5vw - 2px);
-        margin-right: calc(2.5vw - 2px);
-      }
-      
-      .notActiveLink {
-       
-        height: 10vh;
-        width: 20vw;
-    
-      }
-      
-      .notActiveLink:hover {
-       
-        height: 7vh;
-        width: 10vw;
-        margin-top: 1.5vh;
-        margin-bottom: 1.5vh;
-        margin-left: calc(2.5vw - 2px);
-        margin-right: calc(2.5vw - 2px);
-        
-      }
-
+    .notActiveLinkMob {
+        color: black;
+    }
  }

@@ -53,11 +53,13 @@ const NavComp = () => {
 
     <section className={`mobileMenu showMenu${forMenu}`}>
       <ul className={`linksContainerMob showMenu${forMenu}`}>
-        <li className='mobileLinks' ><NavLink to='/login'>Login</NavLink></li>
-        <li className='mobileLinks' ><NavLink to='/purchases'>Purchases</NavLink></li>
-        <li className='mobileLinks' ><NavLink to='/cart'>Cart</NavLink></li>
+        <li className='mobileLinks' onClick={hideMenu} ><NavLink className={({isActive}) => isActive ? 'activeLinkMob' : 'notActiveLinkMob'} to='/login'>Login</NavLink></li>
+        <li className='mobileLinks' onClick={hideMenu} ><NavLink className={({isActive}) => isActive ? 'activeLinkMob' : 'notActiveLinkMob'} to='/purchases'>Purchases</NavLink></li>
+        <li className='mobileLinks' onClick={hideMenu} ><NavLink className={({isActive}) => isActive ? 'activeLinkMob' : 'notActiveLinkMob'} to='/cart'>
+          <i className="fa-solid fa-cart-plus"></i>  
+        </NavLink></li>
       </ul>
-      <button className={`mobileCloseBtn showMenu${forMenu}`} onClick={hideMenu} >X</button>
+      <button className={`mobileCloseBtn showMenu${forMenu}`} onClick={hideMenu} >✖</button>
     </section>
 
     <section className={`mobBackMenu showBack${forMenu}`}></section>
